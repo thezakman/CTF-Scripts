@@ -18,6 +18,6 @@ for x in xrange(9):
         flag.append(resultado)
         
     
-print ' '.join(flag) # Space in between words (remove the space in case you don't need it)
+print ' '.join(flag) # Space in between words (remove the space in case you don't need it.)
 
  
