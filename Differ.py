@@ -1,4 +1,10 @@
 
+#!/usr/bin/python
+
+# Script to Check the difference in 2 files
+#                      1 fevereiro de 2015
+#              https://github.com/thezakman
+
 file1 = raw_input('[file1:] ')
 modified = open(file1,"r").readlines()[0]
 
@@ -7,6 +13,7 @@ pi = open(file2, "r").readlines()[0] # [:len(modified)]
 
 resultado = "".join( x for x,y in zip(modified, pi) if x != y)
 resultado2 = "".join( x for x,y in zip(pi, modified) if x != y)
+
 
 print "[Differ:]
 print '\n-------------------------------------'
