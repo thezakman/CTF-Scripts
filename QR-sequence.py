@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Script to read QR-Codes files in sequence
 #                      14 fevereiro de 2015
 #              https://github.com/thezakman
