@@ -2,12 +2,13 @@
 # Script to use when i am lazy
 # update my most used tools to the last version
 
-# By TheZakMan  15/01/2015         
+# By TheZakMan  30/05/2015 22:16:51        
 # Suggestions or comments can be PM'd to @TheZakMan
 
 # [TODO:]
-# . Re-do the intere script in python
+# . Re-do it all in pure python
 # . Make a menu to select what to update
+# . Add a option menu
 # . Clean
 
 
@@ -30,17 +31,14 @@ echo "                                /_/                           ";
 
 
 echo -e "${SC}"
-echo -e "                                        Layback and enjoy!\n";
+echo -e "                                      ╔════════════════════╗"
+echo -e "                                      | Layback and enjoy! |";
+echo -e "                                      ╚════════════════════╝\n"
 echo -e "         ____ ______ ______ ______________________    ";
 echo -e "        ||fn|||ctrl||| alt|||                    ||   ";
 echo -e "        ||__|||____|||____|||____________________||   ";
 echo -e "        |/__\|/____\|/____\|/____________________\|   ";
 
-
-#echo -e "${SC}                ____ ______ ______ ______________________    ";
-#echo -e "${SC}               ||fn|||ctrl|||alt |||                    ||   ";
-#echo -e "${SC}               ||__|||____|||____|||____________________||   ";
-#echo -e "${SC}               |/__\|/____\|/____\|/____________________\|   ";
 
 echo ""; 
 
@@ -73,17 +71,22 @@ cd /usr/share/sqlmap && ./sqlmap.py --update
 # optional update for discover script ( in case you have installed :P )
 #bash /opt/discover/update.sh
 
-echo "_______________________________________________________________\n"
+echo "_______________________________________________________________"
 echo -e "${verde}_  _ ____ _   _    ____ _  _ _ ____ ____   /";
 echo -e "|__| |___  \_/     |    |__| | |___ |___  / ";
 echo -e "|  | |___   |      |___ |  | | |___ |    .  ";
 echo -e "                                            ";
 
 echo -e "${SC}---------------------------------${verde}"
-read -p "What about Update Kali too? [Y/n]" resposta
-if test "$resposta" = "Y"
-then
-     echo -e "${azul}[*] Updating the entire system.";
+read -p "What about Update Kali too? [Y/n] " resposta
+#if test "$resposta" = "Y"
+
+if [[ $resposta == "y" || $resposta == "Y" || $resposta == "s" || $resposta == "S" || $resposta == "yes" || $resposta == "Yes" || $resposta == "sim" || $resposta == "Sim" ]]
+
+then 
+     echo -e "${SC}---------------------------------${verde}"
+     echo -e "${SC}[*] Updating the entire system.${amarelo}";
+     echo "_______________________________________________________________"
      apt-get update -y && apt-get upgrade && apt-get -y dist-upgrade;
      apt-get clean # lets clean the shit!
 else
